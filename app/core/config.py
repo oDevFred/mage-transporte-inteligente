@@ -1,3 +1,4 @@
-import os
+from decouple import config
 
-DB_URL = os.getenv("DB_URL", "postgresql://usuario:senha@localhost:5432/mage_db")
+DB_URL = config("DB_URL")
+print(f"Conectando ao banco: {DB_URL}")
